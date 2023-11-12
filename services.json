@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Shoes",
+        "description": "Black Converse Womens Size 7.5",
+        "price": 50.00
+
+    },
+    {
+        "name": "Socks",
+        "description": "4-Pk White Anckle Socks. Sizes 6-10.",
+        "price": 10.00
+
+    },
+    {
+        "name": "Pants",
+        "description": "Levis 501 Jeans. Size 6.",
+        "price": 40.00
+
+    },
+    {
+        "name": "Shirt",
+        "description": "Attack on Titan Graphic T.",
+        "price": 25.00
+
+    },
+    {
+        "name": "Sweater",
+        "description": "Black Hoodie size M.",
+        "price": 20.00
+
+    }
+]
