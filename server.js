@@ -10,9 +10,12 @@ const app = express();
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/service-catalog')
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error('Could not connect to MongoDB', err));
+// mongoose.connect('mongodb://localhost/service-catalog')
+// mongoose.connect('mongodb://mongodb/service-catalog')
+mongoose.connect('mongodb://host.docker.internal:27017/service-catalog')
+     .then(() => console.log('Connected to MongoDB'))
+     .catch(err => console.error('Could not connect to MongoDB', err));
+
 
 // Define a schema for the services collection
 const serviceSchema = new mongoose.Schema({
@@ -29,6 +32,7 @@ const Service = mongoose.model('Service', serviceSchema);
 app.get('/services', async (req, res) => {
     // Return a list of available services
     const services = await Service.find();
+    console.log(services);
     res.send(services);
 });
 

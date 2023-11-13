@@ -16,3 +16,4 @@ View service catalog on MongoDB Compass: mongodb://localhost:27017/service-catal
 
 ## Build Docker Image
 In terminal: docker build --rm -t service-catalog .
+In terminal: docker run -p 3000:3000 service-catalog
