@@ -6,6 +6,7 @@ Microservice to display a product catalog
 Download Node.js package from this link: https://nodejs.org/en/
 Download MongoDB using this link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
 YouTube tutorial that helped: https://www.youtube.com/watch?v=MyIiM7z_j_Y
+Download MongoDB Compass: https://www.mongodb.com/try/download/compass
 In terminal: npm install express --save
 In terminal: npm init -y
 In terminal: npm install express mongoose body-parser
