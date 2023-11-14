@@ -15,7 +15,12 @@ In terminal run: node server.js
 View service catalog on local host: http://localhost:3000/services
 View service catalog on MongoDB Compass: mongodb://localhost:27017/service-catalog
 
-## Populate DB on MongoDB Compass
+
+## Run through Minikube
+In terminal: 
+minikube start
+eval $(minikube docker-env)
+docker build --rm -t service-catalog .
 Open MongoDB Compass
 Click Connect > New Window
 In URI box: mongodb://localhost:27017/service-catalog
@@ -25,16 +30,11 @@ Click ADD DATA
 Click import JSON or CSV file
 Locate your services.json and select it
 Verify the database is populated with the products
-
-## Run through Minikube
-In terminal: 
-minikube start
-eval $(minikube docker-env)
-docker build --rm -t service-catalog .
+Return to IDE
 kubectl apply -f minikubeDeployment.yaml
 kubectl get pods
 kubectl get deployment service-catalog
-kubectl expose deployment service-catalog --type=LoadBalancer --name=service-catalog-service
+kubectl expose deployment service-catalog --type=LoadBalancer --name=service-catalog-service 
 kubectl get services service-catalog-service
 (IN DIFFERENT TERMINAL) minikube tunnel
 (BACK IN ORIGINAL TERMINAL) kubectl get services service-catalog-service
