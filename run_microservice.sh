@@ -43,10 +43,6 @@ kubectl rollout status deployment/service-catalog
 echo "Exposing the service via LoadBalancer..."
 kubectl expose deployment service-catalog --type=LoadBalancer --name=service-catalog-service
 
-# Run Minikube tunnel in a different terminal
-echo "Starting Minikube tunnel in a new terminal..."
-gnome-terminal -- minikube tunnel
-
 # Fetching service details
 echo "Fetching service details..."
 kubectl get services service-catalog-service
