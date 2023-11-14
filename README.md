@@ -1,12 +1,12 @@
 # service-catalog
 
-Microservice to display a product catalog
+!Microservice to display a product catalog!
 
 ## Setup
-Download Node.js package from this link: https://nodejs.org/en/
-Download MongoDB using this link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
-YouTube tutorial that helped: https://www.youtube.com/watch?v=MyIiM7z_j_Y
-Download MongoDB Compass: https://www.mongodb.com/try/download/compass
+1. Download Node.js package from this link: https://nodejs.org/en/
+2. Download MongoDB using this link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
+3. YouTube tutorial that helped: https://www.youtube.com/watch?v=MyIiM7z_j_Y
+4. Download MongoDB Compass: https://www.mongodb.com/try/download/compass
 In terminal: npm install express --save
 In terminal: npm init -y
 In terminal: npm install express mongoose body-parser
