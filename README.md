@@ -43,4 +43,6 @@ curl http://127.0.0.1:3000/services
 If it does not redirect to page, type that url in your browser
 docker run -p 3000:3000 service-catalog
 
-
+## Run everything through Script
+chmod +x run_microservice.sh
+./run_microservice.sh
