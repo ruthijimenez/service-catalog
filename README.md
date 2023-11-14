@@ -17,7 +17,8 @@
 
 
 ## Run through Minikube
-*In terminal: 
+*In terminal:  
+
 11. minikube start
 12. eval $(minikube docker-env)
 12. docker build --rm -t service-catalog .
