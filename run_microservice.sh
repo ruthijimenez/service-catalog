@@ -19,10 +19,6 @@
 
 echo "Deploying service-catalog microservice on Minikube..."
 
-# # Start Minikube
-# echo "Starting Minikube..."
-# minikube start
-
 # Setting Docker to use Minikube's Docker daemon
 echo "Setting Docker to use Minikube's Docker daemon..."
 eval $(minikube -p minikube docker-env)
