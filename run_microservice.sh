@@ -1,21 +1,10 @@
 #!/bin/bash
 
-# # --- COMMENTED OUT THE LOCAL SETUP ---
-# # ------------ From here --------------
-
-# echo "Setting up service-catalog microservice locally..."
-
-# # Install Node.js dependencies
-# echo "Installing Node.js dependencies..."
-# npm install express mongoose body-parser
-
-# # Run server.js locally
-# echo "Running server.js locally..."
-# node server.js &
-
-# # -------------- To here ----------------
-
 # --- Minikube Deployment ---
+
+# Start Minikube
+echo "Starting Minikube..."
+minikube start
 
 echo "Deploying service-catalog microservice on Minikube..."
 
