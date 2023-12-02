@@ -14,11 +14,12 @@ eval $(minikube -p minikube docker-env)
 
 # Build Docker image
 echo "Building Docker image for service-catalog..."
-docker build --rm -t service-catalog .
+docker build --rm -t service-catalog "./tempRepo"
 
 # Apply Kubernetes deployment
 echo "Applying Kubernetes deployment..."
-kubectl apply -f minikubeDeployment.yaml
+#kubectl apply -f minikubeDeployment.yaml
+kubectl apply -f "./tempRepo/minikubeDeployment.yaml"
 
 # Wait for the deployment to be ready
 echo "Waiting for deployment to be ready..."
