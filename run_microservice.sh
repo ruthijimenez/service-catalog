@@ -14,12 +14,13 @@ eval $(minikube -p minikube docker-env)
 
 # Build Docker image
 echo "Building Docker image for service-catalog..."
-docker build --rm -t service-catalog "./tempRepo"
+# docker build --rm -t service-catalog "./tempRepo"
+docker build --rm -t service-catalog .
 
 # Apply Kubernetes deployment
 echo "Applying Kubernetes deployment..."
-#kubectl apply -f minikubeDeployment.yaml
-kubectl apply -f "./tempRepo/minikubeDeployment.yaml"
+# kubectl apply -f "./tempRepo/minikubeDeployment.yaml"
+kubectl apply -f minikubeDeployment.yaml
 
 # Wait for the deployment to be ready
 echo "Waiting for deployment to be ready..."
@@ -35,4 +36,5 @@ kubectl get services service-catalog-service
 
 # Notify user to check external IP
 echo "Check the EXTERNAL-IP in the output of the above command. It should not be 'pending'."
-echo "Once the EXTERNAL-IP is available (like 127.0.0.1), you can access the service at http://127.0.0.1:3000/services"
+#echo "Once the EXTERNAL-IP is available (like 127.0.0.1), you can access the service at http://127.0.0.1:3000/services"
+echo "Displayed in user friendly format at http://127.0.0.1:3000/catalog.html"

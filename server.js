@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 
 // Create an instance of the express application
 const app = express();
@@ -9,9 +10,10 @@ const app = express();
 // Set up middleware to parse incoming requests
 app.use(bodyParser.json());
 
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Connect to MongoDB
-// mongoose.connect('mongodb://localhost/service-catalog')
-// mongoose.connect('mongodb://mongodb/service-catalog')
 mongoose.connect('mongodb://host.docker.internal:27017/service-catalog')
      .then(() => console.log('Connected to MongoDB'))
      .catch(err => console.error('Could not connect to MongoDB', err));
@@ -22,7 +24,8 @@ const serviceSchema = new mongoose.Schema({
     
     name: String,
     description: String,
-    price: Number
+    price: Number,
+    image: String
 });
 
 // Define a model for the services collection
@@ -41,7 +44,8 @@ app.post('/services', async (req, res) => {
     const service = new Service({
         name: req.body.name,
         description: req.body.description,
-        price: req.body.price
+        price: req.body.price,
+        image: req.body.image
     });
     await service.save();
     res.send(service);
@@ -59,7 +63,8 @@ app.put('/services/:id', async (req, res) => {
     const service = await Service.findByIdAndUpdate(req.params.id, {
         name: req.body.name,
         description: req.body.description,
-        price: req.body.price
+        price: req.body.price,
+        image: req.body.image
     }, { new: true });
     if (!service) return res.status(404).send('Service not found');
     res.send(service);

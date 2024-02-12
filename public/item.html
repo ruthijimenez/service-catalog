@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Details</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        #service-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        #service-details img {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        #service-details h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        #service-details p {
+            color: #666;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Item Details</h1>
+    <div id="service-details">
+    </div>
+    <button id="add-to-cart">Add to Cart</button>
+    <button onclick="window.location.href='catalog.html'">Back to Catalog</button>
+
+    <script>
+    $(document).ready(function() {
+        var serviceId = new URLSearchParams(window.location.search).get('id');
+        $.getJSON(`http://127.0.0.1:3000/services/${serviceId}`, function(service) {
+            console.log(service);  // Add this line
+            var serviceDetails = `
+                <img src="${service.image}" alt="${service.name}" />
+                <h2>${service.description}</h2>
+                <p>$ ${service.price}</p>`;
+            $('#service-details').append(serviceDetails);
+        });
+
+        $('#add-to-cart').click(function() {
+            $.post('http://127.0.0.1:4000/cart', { serviceId: serviceId })
+                .done(function() {
+                    alert('Item added to cart');
+                })
+                .fail(function() {
+                    alert('Failed to add item to cart');
+                });
+        });
+    });
+    </script>
+</body>
+</html>

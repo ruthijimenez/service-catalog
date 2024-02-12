@@ -45,7 +45,5 @@
 32. docker run -p 3000:3000 service-catalog
 
 ## Run everything through Script
-33. chmod +x run_tunnel.sh
-34. chmod +x run_microservice.sh
-35. ./run_tunnel.sh &
-36. ./run_microservice.sh
+33. chmod +x run_microservice.sh
+35. ./run_microservice.sh

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            text-align: center;
+        }
+        #services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            align-items: stretch;
+        }
+        
+        .service-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex: 1;
+        }
+        
+        .service-card h2 {
+            font-size: 14px;
+            color: #333;
+            flex: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* add this line */
+            -webkit-box-orient: vertical; /* add this line */
+        }
+        
+        .service-card p {
+            margin: 0;
+            color: #666;
+            flex: 1;
+            
+        }
+        .service-card a {
+            color: #000;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catalog</h1>
+    <div id="services-container">
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $.getJSON('http://127.0.0.1:3000/services', function(data) {
+                data.forEach(function(service) {
+                    var serviceCard = `
+                    <a href="item.html?id=${service._id}">
+                        <div class="service-card">
+                            <img src="${service.image}" alt="${service.name}" />
+                            <h2>${service.description}</h2>
+                            <p>$ ${service.price}</p>
+                        </div>
+                    </a>`;
+                    $('#services-container').append(serviceCard);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
