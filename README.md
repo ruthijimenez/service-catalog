@@ -10,8 +10,7 @@
 5. In terminal: npm install express --save
 6. In terminal: npm init -y
 7. In terminal: npm install express mongoose body-parser
-8. npm install cors
-9. In terminal run: node server.js
+8. In terminal run: node server.js
 
 9. View service catalog on local host: http://localhost:3000/services
 10. View service catalog on MongoDB Compass: mongodb://localhost:27017/service-catalog
