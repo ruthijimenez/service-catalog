@@ -79,5 +79,5 @@ app.delete('/services/:id', async (req, res) => {
 
 // Start the server
 app.listen(3000, () => {
-    console.log('Service catalog microservice listening on port 3000');
+    console.log('Service catalog microservice listening on port 3000: http://localhost:3000/services or http://127.0.0.1:3000/catalog.html');
 });
