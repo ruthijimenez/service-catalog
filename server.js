@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
 
 // Create an instance of the express application
 const app = express();
@@ -10,11 +11,16 @@ const app = express();
 // Set up middleware to parse incoming requests
 app.use(bodyParser.json());
 
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
+
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
-mongoose.connect('mongodb://host.docker.internal:27017/service-catalog')
+//mongoose.connect('mongodb://host.docker.internal:27017/service-catalog')
+mongoose.connect('mongodb://localhost:27017/service-catalog')
      .then(() => console.log('Connected to MongoDB'))
      .catch(err => console.error('Could not connect to MongoDB', err));
 
@@ -79,5 +85,5 @@ app.delete('/services/:id', async (req, res) => {
 
 // Start the server
 app.listen(3000, () => {
-    console.log('Service catalog microservice listening on port 3000');
+    console.log('Service catalog microservice listening on port 3000: http://localhost:3000/services or http://127.0.0.1:3000/catalog.html');
 });
