@@ -24,6 +24,7 @@ const serviceSchema = new mongoose.Schema({
     
     name: String,
     description: String,
+    long_description: String,
     price: Number,
     image: String
 });
@@ -44,6 +45,7 @@ app.post('/services', async (req, res) => {
     const service = new Service({
         name: req.body.name,
         description: req.body.description,
+        long_description: req.body.long_description,
         price: req.body.price,
         image: req.body.image
     });
