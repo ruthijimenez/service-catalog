@@ -1,91 +1,49 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-        h1 {
-            text-align: center;
-        }
-        #services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-            align-items: stretch;
-        }
-        
-        .service-card {
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            height: 280px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        .service-card img {
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 8px;
-            flex: 1;
-        }
-        
-        .service-card h2 {
-            font-size: 14px;
-            color: #333;
-            flex: 1;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2; /* add this line */
-            -webkit-box-orient: vertical; /* add this line */
-        }
-        
-        .service-card p {
-            margin: 0;
-            color: #666;
-            flex: 1;
-            
-        }
-        .service-card a {
-            color: #000;
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
-    <h1>Catalog</h1>
-    <div id="services-container">
+<div class="bg-white">
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 class="font-bold text-gray-900 text-3xl">Catalog</h2>
+
+        <div id="services-container" class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            <!-- Services will be inserted here -->
+        </div>
     </div>
-    
-    <script>
-        $(document).ready(function() {
-            $.getJSON('http://127.0.0.1:3000/services', function(data) {
-                data.forEach(function(service) {
-                    var serviceCard = `
-                    <a href="item.html?id=${service._id}">
-                        <div class="service-card">
-                            <img src="${service.image}" alt="${service.name}" />
-                            <h2>${service.description}</h2>
-                            <p>$ ${service.price}</p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $.getJSON('http://127.0.0.1:3000/services', function(data) {
+            data.forEach(function(service) {
+                var serviceCard = `
+                <div class="group relative">
+                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                        <img src="${service.image}" alt="${service.name}" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a href="item.html?id=${service._id}">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    ${service.name}
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">${service.description}</p>
                         </div>
-                    </a>`;
-                    $('#services-container').append(serviceCard);
-                });
+                        <p class="text-sm font-medium text-gray-900">$ ${service.price}</p>
+                    </div>
+                </div>`;
+                $('#services-container').append(serviceCard);
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
