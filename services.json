@@ -1,37 +1,98 @@
 [
     {
-        "name": "Shoes",
-        "description": "Black Converse Womens Size 7.5",
-        "price": 50.00,
-        "image": "images/shoes.jpeg"
+        "name": "Basic hoodie",
+        "description": "Black",
+        "long_description": "Embrace classic comfort with this sleek black hoodie, a versatile staple for any wardrobe. The hoodie's clean design is accentuated by its minimalistic aesthetic, offering a snug and cozy feel with its soft material blend.",
+        "price": 20.00,
+        "image": "images/sweater.jpeg"
 
     },
     {
-        "name": "Socks",
-        "description": "4-Pk White Anckle Socks. Sizes 6-10",
-        "price": 10.00,
-        "image": "images/socks.jpeg"
+        "name": "Basic Tee",
+        "description": "Black",
+        "long_description": "Comfortable, stylish, and versatile, the Basic Tee is a must-have for any wardrobe. The Basic Tee is made from 100% organic cotton.",
+        "price": 20.00,
+        "image": "images/bt1.jpeg"
 
     },
     {
-        "name": "Pants",
-        "description": "Levis 501 Jeans. Size 6",
-        "price": 40.00,
-        "image": "images/pants.jpeg"
+        "name": "Basic Tee",
+        "description": "Aspen White",
+        "long_description": "Comfortable, stylish, and versatile, the Basic Tee is a must-have for any wardrobe. The Basic Tee is made from 100% organic cotton.",
+        "price": 20.00,
+        "image": "images/bt2.jpeg"
 
     },
     {
-        "name": "Shirt",
-        "description": "Attack on Titan Graphic Tee. Size M",
+        "name": "Basic Tee",
+        "description": "Charcoal",
+        "long_description": "Comfortable, stylish, and versatile, the Basic Tee is a must-have for any wardrobe. The Basic Tee is made from 100% organic cotton.",
+        "price": 20.00,
+        "image": "images/bt3.jpeg"
+
+    },
+    {
+        "name": "Artwork Tee",
+        "description": "Iso Dots",
+        "long_description": "Comfortable, stylish, and versatile, the Basic Tee is a must-have for any wardrobe. The Basic Tee is made from 100% organic cotton.",
+        "price": 20.00,
+        "image": "images/at1.jpeg"
+
+    },
+    {
+        "name": "Anime Tee",
+        "description": "Attack on Titan",
+        "long_description": "Dive into the world of epic battles and courageous heroes with this black t-shirt featuring a striking Attack on Titan print. The bold graphic is centered around the iconic image of a towering Titan, set against a backdrop of ominous clouds and the series' name in powerful red lettering.",
         "price": 25.00,
         "image": "images/shirt.jpeg"
 
     },
     {
-        "name": "Sweater",
-        "description": "Black Hoodie size M",
-        "price": 20.00,
-        "image": "images/sweater.jpeg"
+        "name": "Linework Artwork Tee 3-Pack",
+        "description": "Get all 3 colors of our popular Linework design!",
+        "long_description": "Mens comfortable, stylish, and versatile, the Basic Tee is a must-have for any wardrobe. The Basic Tee is made from 100% organic cotton and is available in a variety of colors.",
+        "price": 108.00,
+        "image": "images/lat1.jpeg"
+
+    },
+    {
+        "name": "Basic Tee 6 Pack",
+        "description": "Black, Aspen White, Gray",
+        "long_description": "Mens comfortable, stylish, and versatile, the Basic Tee is a must-have for any wardrobe. The Basic Tee is made from 100% organic cotton and is available in a variety of colors.",
+        "price": 192.00,
+        "image": "images/btp1.jpeg"
+
+    },
+    {
+        "name": "Zip Tote Basket",
+        "description": "Charcoal",
+        "long_description": "The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use.",
+        "price": 140.00,
+        "image": "images/zt1.jpeg"
+
+    },
+    {
+        "name": "Zip High Wall Tote",
+        "description": "White and blue",
+        "long_description": "The Zip High Wall Tote is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use.",
+        "price": 150.00,
+        "image": "images/zhwt1.jpeg"
+
+    },
+    {
+        "name": "High Wall Tote",
+        "description": "Back and Orange",
+        "long_description": "This stylish tote bag boasts a sleek, black textured exterior that exudes a sophisticated urban appeal. Its sturdy handles ensure comfortable carrying, while the vibrant orange drawstring closure adds a pop of color, securing your belongings with a fashionable flair. The bag's spacious interior makes it an ideal choice for a busy day out or a casual business meeting, seamlessly blending functionality with modern design.",
+        "price": 210.00,
+        "image": "images/hwt1.jpeg"
+
+    },
+    {
+        "name": "Nomad Puch",
+        "description": "White and Black",
+        "long_description": "This compact and convenient pouch features a light heather gray fabric that offers both durability and a touch of casual elegance. The contrasting black strap provides an easy grip, while the dual-zipper design ensures secure storage for your essentials. Perfect for organizing accessories, cosmetics, or tech gadgets, this pouch is a versatile companion for everyday organization.",
+        "price": 50.00,
+        "image": "images/np1.jpeg"
 
     }
 ]
