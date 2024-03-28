@@ -81,6 +81,12 @@ app.delete('/services/:id', async (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-    console.log('Service catalog microservice listening on port 3000: http://localhost:3000/services or http://127.0.0.1:3000/catalog.html');
+// app.listen(3000, () => {
+//     console.log('Service catalog microservice listening on port 3000: http://localhost:3000/services or http://127.0.0.1:3000/catalog.html');
+// });
+
+// Listen on the port specified by the serverless orchestrator at runtime
+const server = app.listen(0, () => {
+    const port = server.address().port;
+    console.log(`Service catalog microservice listening on port ${port}`);
 });
