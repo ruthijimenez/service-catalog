@@ -14,8 +14,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
-//mongoose.connect('mongodb://host.docker.internal:27017/service-catalog')
-mongoose.connect('mongodb://localhost:27017/service-catalog')
+mongoose.connect('mongodb://host.docker.internal:27017/service-catalog')
+//mongoose.connect('mongodb://localhost:27017/service-catalog')
      .then(() => console.log('Connected to MongoDB'))
      .catch(err => console.error('Could not connect to MongoDB', err));
 
@@ -86,6 +86,6 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-app.listen(3000, 'localhost', () => {
+app.listen(3000, () => {
     console.log('Service catalog microservice listening on port 3000: http://localhost:3000/services or http://localhost:3000/catalog.html');
 });

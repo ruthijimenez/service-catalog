@@ -20,7 +20,7 @@
 
 <script>
     $(document).ready(function() {
-        $.getJSON('http://localhost:3000/services', function(data) {
+        $.getJSON('/services', function(data) {
             data.forEach(function(service) {
                 var serviceCard = `
                 <div class="group relative">
